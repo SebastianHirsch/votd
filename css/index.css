@@ -1,0 +1,67 @@
+a {color: #DE0059; text-decoration: none;}
+a:hover {text-decoration: underline;}
+#header_link {color: black;}
+#header_link:hover {color: #D10054; text-decoration: none;}
+
+body {
+  background-image: url('../images/background.png');
+  margin: 0px;
+  padding: 0px;
+}
+
+body.normal::selection {background: #ED005F;}
+
+.forkme_banner {
+
+}
+
+.header {
+  font-family: "Blanch", sans-serif;
+  font-size: 200px;
+  text-align: center;
+  
+  margin-top: -40px;
+}
+
+.description {
+  font-family: "Blanch", sans-serif;
+  font-size: 65px;
+  text-align: center;
+  margin-top: 65px;
+}
+
+.links {
+  font-family: "Blanch", sans-serif;
+  font-size: 55px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+hr {
+  margin-top: 63px;
+  color: black;
+}
+
+p {
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 30px;
+  text-align: center;
+}
+
+#source {
+  border: solid black;
+  border-radius: 7px;
+  width: 260px;
+  background: black;
+  padding: 10px; 
+  font-family: "Courier", monospace;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  margin: 0px auto;
+}
+
+.copyright {
+  font-family: "Trebuchet MS", sans-serif;
+  font-size  : 15px;
+}
