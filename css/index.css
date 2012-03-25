@@ -24,14 +24,14 @@ body.normal::selection {background: #ED005F;}
 }
 
 .description {
-  font-family: "Blanch", sans-serif;
+  font-family: "BlanchCapsInline", sans-serif;
   font-size: 65px;
   text-align: center;
   margin-top: 65px;
 }
 
 .links {
-  font-family: "Blanch", sans-serif;
+  font-family: "BlanchCapsInline", sans-serif;
   font-size: 55px;
   text-align: center;
   margin-top: 30px;
