@@ -3,13 +3,21 @@ a:hover {text-decoration: underline;}
 #header_link {color: black;}
 #header_link:hover {color: #D10054; text-decoration: none;}
 
+::-moz-selection {
+  background: #DE0059;
+  color     : #ffffff;
+}
+
+::selection {
+  background: #DE0059;
+  color     : #ffffff;
+}
+
 body {
   background-image: url('../images/background.png');
   margin: 0px;
   padding: 0px;
 }
-
-body.normal::selection {background: #ED005F;}
 
 .forkme_banner {
 
