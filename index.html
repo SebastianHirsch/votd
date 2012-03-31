@@ -1,57 +1,42 @@
 <html>
   <head>
     <link href="css/blanch.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/blanchcaps.css" rel="stylesheet" type="text/css" media="all">
     <link href="css/index.css" rel="stylesheet" type="text/css" media="all">
     <script src="js/jquery.min.js" type="text/javascript"></script>
     <script src="js/index.js" type="text/javascript"></script>
   </head>
 
   <body>
+    <div class="sheet">
     <a href="https://github.com/doctorbh/votd" target="_blank"><img class="forkme_banner" src="images/forkme.png"></a><div class="header"><a id="header_link" href="https://doctorbh.github.com/votd/">votd</a></div>
     <div class="description">an api and shell tool for a bible verse of the day</div>
-    <div class="links"><a href="https://github.com/doctorbh/votd" target="_blank">source</a>  | <strong><a href="https://rubygems.org/gems/votd" target="_blank">rubygems</a></strong> |  <a href="http://rubydoc.info/gems/votd/frames" target="_blank">docs</a></div> 
-    <hr>
+    <div class="links"><a href="https://github.com/doctorbh/votd" target="_blank">source</a>  | <strong><a href="https://rubygems.org/gems/votd" target="_blank">rubygems</a></strong> |  <a href="http://rubydoc.info/gems/votd/frames" target="_blank">docs</a></div>
+  </div>
 
-    <p>Installation is as easy as one-two-three:</p>
-    <pre id="source">$ <span style="color: #ED005F;">gem</span> install votd</pre>
+  <pre id="source" style="margin-top: 75px;"><span style="font-weight: normal;">$</span> gem install votd</pre>
+  <pre id="source" class="main_source" style="margin-top: 60px; width: 780px;">
+require <span style="color: #72FF2B;">'votd'</span>
 
-    <p>Then just add the template:</p>
-    <pre style="width: 520px;" id="source">
-    <span style="color: #ED005F;">require</span> <span style="color: #009BDE;">'votd'</span>
+<span style="color: #767676"># See our docs for more supported APIs</span>
+votd = <span style="color: #FFC02B;">Votd</span>::<span style="color: #FFC02B;">BibleGateway</span>.new
 
-    verse = <span style="color: #E3A436;">Votd</span>::<span style="color: #E3A436;">NetBible</span>.<span style="color: #009BDE;">new</span>
-    
-    my_sites_verse = <span style="color: #009BDE;">"
-    
-    Verse of the day for <span style="color: #C574CC;">#{</span><span style="color: white;">verse.date</span><span style="color: #C574CC;">}</span>
-    
-    <span style="color: #C574CC;">#{</span><span style="color: white;">verse.text</span><span style="color: #C574CC;">}</span>
-    -- <span style="color: #C574CC;">#{</span><span style="color: white;">verse.reference</span><span style="color: #C574CC;">}</span>, <span style="color: #C574CC;">#{</span><span style="color: white;">verse.version</span><span style="color: #C574CC;">}</span>"</span>
-    <span style="color: #767676;">
-    # verse.date      -- current date"
-    # verse.text      -- the verse itself
-    # verse.reference -- bible reference (e.g. John 3:16)
-    # verse.version   -- bible version (e.g. King James)
-    </span>
-    </pre>
-    
+votd.reference <span style="color: #767676;"># e.g. John 3:16</span>
+votd.text      <span style="color: #767676;"># e.g. "For God so loved the world..."</span>
+votd.date      <span style="color: #767676;"># e.g. 2012-03-30</span>
+votd.version   <span style="color: #767676;"># e.g. NIV</span>
+votd.copyright <span style="color: #767676;"># e.g. Copyright &copy;...</span>
 
-    <p>Then simply add the template into your ERB HTML:</p>
-    <pre id="source" style="width: 330px;">
-      <span style="color: 85BDE6;"><%=</span> my_sites_verse <span style="color: 85BDE6;">%></span><br>
-      <span style="color: #767676;">&lt;!-- Or use the easier... --></span><br>
-      <span style="color: #85BDE6;"><%=</span> verse.to_html <span style="color: #85BDE6;">%></span><br>
-      <span style="color: #767676;">&lt;!-- The built-in to_html<br> method turns the verse into html<br> code. --></span>
-    </pre>
+votd.to_html   <span style="color: #767676;"># e.g. &lt;p class="votd">For God so loved the world...&gt;/p><span>
 
-    <p>The to_html will always output:
-    <pre id="source" style="width: 695px;">
-    <span style="color: #85BDE6;">&lt;p></span> class=<span style="color: #009BDE;">"votd-text"</span>For by grace you are saved through faith... <dd>it is not from works, <dd>so that no one can boast.<span style="color: #85BDE6;">&lt;/p></span>
-<span style="color: #85BDE6;">&lt;p></span>
-    <span style="color: #85BDE6;">&lt;span</span> <span style="color: #E3A436;">class</span>=<span style="color: #009BDE;">"votd-reference"</span>>&lt;strong>Ephesians 2:8-9&lt;/strong><span style="color: #85BDE6;">&lt;/span><span>
-    <span style="color: #85BDE6;">&lt;span</span> <span style="color: #E3A436;">class</span><span style="color: white;">=</span><span style=""><span style="color: #009BDE;">"votd-version"</span>><span style="color: #85BDE6;">&lt;em></span><em><span style="color: white;">(NETBible)</span></em><span style="color: #85BDE6;">&lt;/em></span><span style="color: #85BDE6;">&lt;/span></span>
+<span style="color: #767676;"># The output of the HTML looks like the following:</span>
+&lt;p class="votd-text">For by grace you are saved through faith...<br> it is not from works, so that no one can boast.&lt;/p>
+&lt;p>
+&lt;span class="votd-reference">&lt;strong>Ephesians 2:8-9&lt;/strong>&lt;/span>
+&lt;span class="votd-version">&lt;em>(NETBible)&lt;/em>&lt;/span>
 &lt;/p>
     </pre>
-    <br><br>
   </body>
+  <br>
+  <br>
 </html>

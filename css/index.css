@@ -1,6 +1,6 @@
-a {color: #DE0059; text-decoration: none;}
-a:hover {text-decoration: underline;}
-#header_link {color: black;}
+a {color: #DE0059; text-decoration: none; transition:.3s linear; -webkit-transition:.3s linear;}
+a:hover {color: #1A95ED;}
+#header_link {color: black; transition:.3s linear; -webkit-transition:.3s linear;}
 #header_link:hover {color: #D10054; text-decoration: none;}
 
 ::-moz-selection {
@@ -23,23 +23,24 @@ body {
 
 }
 
+
 .header {
   font-family: "BlanchCapsInline", sans-serif;
   font-size: 200px;
   text-align: center;
-  
-  margin-top: -40px;
+ 
+  margin-top: -90px; 
 }
 
 .description {
-  font-family: "BlanchCapsInline", sans-serif;
+  font-family: "BlanchCaps", sans-serif;
   font-size: 65px;
   text-align: center;
   margin-top: 65px;
 }
 
 .links {
-  font-family: "BlanchCapsInline", sans-serif;
+  font-family: "BlanchCaps", sans-serif;
   font-size: 55px;
   text-align: center;
   margin-top: 30px;
